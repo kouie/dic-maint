@@ -1,0 +1,6 @@
+# AutoHotKey scripts
+*.ahk text eol=crlf
+*.ini text eol=crlf
+# Dictionary files
+*.txt text eol=crlf
+*.csv text eol=crlf
