@@ -29,7 +29,7 @@ class EditDialog(QDialog):
         
         self.input = QLineEdit()
         self.input.setText(current_value)
-        self.input.setValidator(validator)
+#        self.input.setValidator(validator)
         
         buttons = QDialogButtonBox(
             QDialogButtonBox.Ok | QDialogButtonBox.Cancel
@@ -163,7 +163,7 @@ class DictionaryMaintenanceTool(QMainWindow):
         if key in self.duplicated_items:
             current_value = ''
             for value in self.duplicated_items[key]:
-                current_value = current_value + '／' + value
+                current_value = current_value + '/' + value
             current_value = current_value[1:]
         else:
             current_value = self.dictionary.get(key, '')
