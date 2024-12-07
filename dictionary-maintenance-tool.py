@@ -181,7 +181,7 @@ class DictionaryMaintenanceTool(QMainWindow):
             self.update_table()
 
     def load_dictionary(self):
-        file_path, _ = QFileDialog.getOpenFileName(self, 'Dictionary File', '', 'Text Files (*.txt)')
+        file_path, _ = QFileDialog.getOpenFileName(self, '辞書ファイルを選択', '', 'Text Files (*.txt)')
         if file_path:
             self.current_file = file_path
             self.file_label.setText(f'辞書ファイル: {file_path}')
@@ -332,16 +332,16 @@ class DictionaryMaintenanceTool(QMainWindow):
         self.write_dictionary(self.current_file)
 
     def save_dictionary_as(self):
-        if self.duplicated_items:
-            response = QMessageBox.question(
-                self,
-                '重複データの確認',
-                '読みが重複するデータが残っています。このまま保存しますか?',
-                QMessageBox.Ok | QMessageBox.Cancel,
-                QMessageBox.Cancel
-            )
-            if response == QMessageBox.Cancel:
-                return
+#        if self.duplicated_items:
+#            response = QMessageBox.question(
+#                self,
+#                '重複データの確認',
+#                '読みが重複するデータが残っています。このまま保存しますか?',
+#                QMessageBox.Ok | QMessageBox.Cancel,
+#                QMessageBox.Cancel
+#            )
+#            if response == QMessageBox.Cancel:
+#                return
 
         file_path, _ = QFileDialog.getSaveFileName(self, '辞書ファイルを保存', '', 'Text Files (*.txt)')
         if file_path:
