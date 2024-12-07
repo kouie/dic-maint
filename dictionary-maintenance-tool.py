@@ -138,11 +138,6 @@ class DictionaryMaintenanceTool(QMainWindow):
             btn.clicked.connect(method)
             button_layout.addWidget(btn)
 
-        # エントリ順維持チェックボックス
-#        self.maintain_order_checkbox = QCheckBox('現在のエントリ順を維持')
-#        self.maintain_order_checkbox.setChecked(True)
-#        button_layout.addWidget(self.maintain_order_checkbox)
-#
         button_layout.addStretch()
 
         main_layout.addLayout(button_layout)
@@ -332,17 +327,6 @@ class DictionaryMaintenanceTool(QMainWindow):
         self.write_dictionary(self.current_file)
 
     def save_dictionary_as(self):
-#        if self.duplicated_items:
-#            response = QMessageBox.question(
-#                self,
-#                '重複データの確認',
-#                '読みが重複するデータが残っています。このまま保存しますか?',
-#                QMessageBox.Ok | QMessageBox.Cancel,
-#                QMessageBox.Cancel
-#            )
-#            if response == QMessageBox.Cancel:
-#                return
-
         file_path, _ = QFileDialog.getSaveFileName(self, '辞書ファイルを保存', '', 'Text Files (*.txt)')
         if file_path:
             self.current_file = file_path
